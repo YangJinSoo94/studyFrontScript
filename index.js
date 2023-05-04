@@ -19,3 +19,12 @@ function regiUser(){
 function updateUser(){
 
 }
+
+window.getUser = () =>{
+    test1.getData();
+}
+
+window.loginUser = () =>{
+    $("#txt_id").val();
+    $("#txt_pw").val();
+}
