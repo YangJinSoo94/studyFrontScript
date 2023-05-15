@@ -76,4 +76,30 @@ export default class Test1{
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
+
+    login(){
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "id": "4",
+            "pw": "1234"
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8080/loginDo", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                    console.log(result);
+                    localStorage.setItem("token", result);
+                }
+            )
+            .catch(error => console.log('error', error));
+    }
 }
