@@ -77,13 +77,13 @@ export default class Test1{
             .catch(error => console.log('error', error));
     }
 
-    login(){
+    login(id, pw){
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-            "id": "4",
-            "pw": "1234"
+            "id": id,
+            "pw": pw
         });
 
         var requestOptions = {
