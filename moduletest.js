@@ -102,4 +102,32 @@ export default class Test1{
             )
             .catch(error => console.log('error', error));
     }
+
+    authToken(token){
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = token;
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8080/authToken", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                if(result == "true"){
+                    alert("토큰이 일치합니다.");
+                }else{
+                    alert("유효한 토큰을 입력하십시오.");
+                }
+            })
+            .catch(error => {
+                alert("토큰이 다릅니다 error!");
+                console.log('error', error)
+            });
+    }
 }

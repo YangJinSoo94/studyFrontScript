@@ -5,13 +5,37 @@
     <title>Title</title>
     <script defer type="module" src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-<input type="button" value="보기" onclick=""/>
-<input type="text" placeholder="id" id="txt_id"/>
-<input type="password" placeholder="password" id="txt_pw"/>
-<textarea placeholder="토큰을 입력하세요" id="txt_token"></textarea>
+<!--<input type="button" value="보기" onclick=""/>-->
+<!--<input type="text" placeholder="id" id="txt_id"/>-->
+<!--<input type="password" placeholder="password" id="txt_pw"/>-->
+<!--<textarea placeholder="토큰을 입력하세요" id="txt_token"></textarea>-->
 
-<input type="button" value="login" onclick="loginDo()"/>
+
+<!--<input type="button" value="login" onclick="loginDo()"/>-->
+<div class="container">
+
+    <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">Login</li>
+        <li class="tab-link" data-tab="tab-2">token</li>
+        <li class="tab-link" data-tab="tab-3">to_be_continued</li>
+    </ul>
+
+    <div id="tab-1" class="tab-content current">
+        <input type="text" placeholder="id" id="txt_id"/>
+        <input type="password" placeholder="password" id="txt_pw"/>
+        <input type="button" value="login" onclick="loginDo();"/>
+    </div>
+    <div id="tab-2" class="tab-content">
+        <textarea placeholder="토큰을 입력하세요" id="txt_token" style="width:300px;height: 100px;"></textarea>
+        <input type="button" value="토큰확인" onclick="authToken();"/>
+    </div>
+    <div id="tab-3" class="tab-content">
+        <h2>아무것도 없지요~</h2>
+    </div>
+
+</div>
 </body>
 </html>
