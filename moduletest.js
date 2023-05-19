@@ -96,7 +96,7 @@ export default class Test1{
         fetch("http://localhost:8080/loginDo", requestOptions)
             .then(response => response.text())
             .then(result => {
-                    console.log(result);
+                    alert(result);
                     localStorage.setItem("token", result);
                 }
             )
